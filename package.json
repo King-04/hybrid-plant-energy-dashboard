@@ -1,0 +1,22 @@
+{
+  "name": "hybrid-plant-energy-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Grafana + ECharts monitor for a fictional solar + wind + battery plant, on a synthetic PostgreSQL dataset",
+  "license": "MIT",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "data": "node tools/run-queries.mjs",
+    "screenshots": "node tools/run-queries.mjs && node tools/render.mjs",
+    "all": "npm run build && npm run screenshots && npm run hero",
+    "hero": "python3 tools/hero.py . '#2A1A05' '#E08A00' 16"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.2.17",
+    "echarts": "5.6.0",
+    "playwright": "1.56.1",
+    "@fontsource/space-grotesk": "5.1.0",
+    "@fontsource/jetbrains-mono": "5.1.0"
+  }
+}
